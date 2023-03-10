@@ -238,7 +238,11 @@ end
 
 {script:Shelter.1}
 on click do
-  go["Shelter"]
+  if inventory.widgets.bloodCheck.text = "Yes"
+   go["End"]
+  else
+   alert["It is not time."]
+  end
 end
 {end}
 
@@ -537,6 +541,8 @@ on click do
  if inventory.widgets.weaponCheck.text = "Yes"
   if inventory.widgets.waterCheck.text = "Yes"
    go["KilledGod"]
+   inventory.widgets.bloodCheck.text:"Yes"
+   inventory.widgets.bloodCount.text:"1"
   else
    alert["The proper tool is not at hand"]
   end
@@ -595,19 +601,19 @@ weapon:{"type":"field","size":[153,20],"pos":[85,90],"font":"menu","border":0,"a
 name:{"type":"field","size":[153,20],"pos":[85,70],"font":"menu","align":"center","value":"Name"}
 count:{"type":"field","size":[17,20],"pos":[238,70],"font":"menu","align":"center","value":"#"}
 acquired:{"type":"field","size":[170,20],"pos":[255,70],"font":"menu","align":"center","value":"Has?"}
-weaponCount:{"type":"field","size":[17,20],"pos":[238,90],"font":"menu","align":"center","value":"0"}
-weaponCheck:{"type":"field","size":[170,20],"pos":[255,90],"font":"menu","border":0,"align":"center","value":"No"}
-waterCount:{"type":"field","size":[17,20],"pos":[238,110],"font":"menu","align":"center","value":"0"}
-keyCount:{"type":"field","size":[17,20],"pos":[238,130],"font":"menu","align":"center","value":"0"}
-bloodCount:{"type":"field","size":[17,20],"pos":[238,150],"font":"menu","align":"center","value":"0"}
+weaponCount:{"type":"field","size":[17,20],"pos":[238,90],"font":"menu","align":"center","value":"1"}
+weaponCheck:{"type":"field","size":[170,20],"pos":[255,90],"font":"menu","border":0,"align":"center","value":"Yes"}
+waterCount:{"type":"field","size":[17,20],"pos":[238,110],"font":"menu","align":"center","value":"1"}
+keyCount:{"type":"field","size":[17,20],"pos":[238,130],"font":"menu","align":"center","value":"1"}
+bloodCount:{"type":"field","size":[17,20],"pos":[238,150],"font":"menu","align":"center","value":"1"}
 boneCount:{"type":"field","size":[17,20],"pos":[238,170],"font":"menu","align":"center","value":"0"}
 water:{"type":"field","size":[153,20],"pos":[85,110],"font":"menu","border":0,"align":"center","value":"Pure Water"}
 key:{"type":"field","size":[153,20],"pos":[85,130],"font":"menu","border":0,"align":"center","value":"Door Key"}
 blood:{"type":"field","size":[153,20],"pos":[85,150],"font":"menu","border":0,"align":"center","value":"God's Blood"}
 bones:{"type":"field","size":[153,20],"pos":[85,170],"font":"menu","border":0,"align":"center","value":"Sixty-Six Pointed Bone(s)"}
-waterCheck:{"type":"field","size":[170,20],"pos":[255,110],"font":"menu","border":0,"align":"center","value":"No"}
-keyCheck:{"type":"field","size":[170,20],"pos":[255,130],"font":"menu","border":0,"align":"center","value":"No"}
-bloodCheck:{"type":"field","size":[170,20],"pos":[255,150],"font":"menu","border":0,"align":"center","value":"No"}
+waterCheck:{"type":"field","size":[170,20],"pos":[255,110],"font":"menu","border":0,"align":"center","value":"Yes"}
+keyCheck:{"type":"field","size":[170,20],"pos":[255,130],"font":"menu","border":0,"align":"center","value":"Yes"}
+bloodCheck:{"type":"field","size":[170,20],"pos":[255,150],"font":"menu","border":0,"align":"center","value":"Yes"}
 boneCheck:{"type":"field","size":[170,20],"pos":[255,170],"font":"menu","border":0,"align":"center","value":"No"}
 
 {script:inventory.0}
